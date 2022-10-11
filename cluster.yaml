@@ -92,3 +92,18 @@ nodeGroups: # Refer: https://github.com/weaveworks/eksctl/blob/main/examples/05-
     maxSize: 1
     subnets:
       - my-public-201-a
+
+  - name: taint-node
+    labels: { role: workers }
+    tags:
+      k8s.io/cluster-autoscaler/enabled: "true" 
+      k8s.io/cluster-autoscaler/my-eks-201: "shared" 
+    instancesDistribution:
+      instanceTypes:
+        - t2.medium
+    desiredCapacity: 1
+    minSize: 0
+    maxSize: 5
+    privateNetworking: true
+    subnets:
+      - my-private-201-a 
