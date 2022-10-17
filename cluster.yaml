@@ -7,21 +7,21 @@ metadata:
   region: us-east-1
   version: "1.20" # kubernetes version
 vpc: # Refer: https://github.com/weaveworks/eksctl/blob/main/examples/04-existing-vpc.yaml
-  id: "vpc-0b0c3b72c2e974799"
+  id: "vpc-03816749c18e5285d"
   subnets:
     public:
       my-public-201-a:
-        id: "subnet-0d6e125c3c99dae9d"
+        id: "subnet-0415bf10b898c2b7f"
         az: "us-east-1a"
       my-public-201-b:
-        id: "subnet-0f8f103301b86f429"
+        id: "subnet-07c826a67229f5596"
         az: "us-east-1b"
     private:
       my-private-201-a:
-        id: "subnet-06abd385f682bcca7"
+        id: "subnet-02a00b8cb8b818230"
         az: "us-east-1a"
       my-private-201-b:
-        id: "subnet-0af57f67e37e026c5"
+        id: "subnet-09e1ddf15e74b2748"
         az: "us-east-1b"
   clusterEndpoints:
     publicAccess:  true
@@ -69,7 +69,7 @@ nodeGroups: # Refer: https://github.com/weaveworks/eksctl/blob/main/examples/05-
     labels: { role: workers }
     tags:
       k8s.io/cluster-autoscaler/enabled: "true" # tag is needed for cluster autoscaler. Refer: https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md#auto-discovery-setup
-      k8s.io/cluster-autoscaler/my-eks-201: "shared" # cluster name tag is optional in latest versions of EKS
+      k8s.io/cluster-autoscaler/tushar-final-project: "shared" # cluster name tag is optional in latest versions of EKS
     instancesDistribution:
       instanceTypes:
         - t2.medium
@@ -83,7 +83,7 @@ nodeGroups: # Refer: https://github.com/weaveworks/eksctl/blob/main/examples/05-
     labels: { role: workers }
     tags:
       k8s.io/cluster-autoscaler/enabled: "true"
-      k8s.io/cluster-autoscaler/my-eks-201: "shared"
+      k8s.io/cluster-autoscaler/tushar-final-project: "shared"
     instancesDistribution:
       instanceTypes:
         - t2.medium
@@ -97,7 +97,7 @@ nodeGroups: # Refer: https://github.com/weaveworks/eksctl/blob/main/examples/05-
     labels: { role: workers }
     tags:
       k8s.io/cluster-autoscaler/enabled: "true" 
-      k8s.io/cluster-autoscaler/my-eks-201: "shared" 
+      k8s.io/cluster-autoscaler/tushar-final-project: "shared" 
     instancesDistribution:
       instanceTypes:
         - t2.medium
